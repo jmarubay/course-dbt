@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+
+  - name: postgres 
+    schema: public 
+    database: raw 
+
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+
+    tables:
+      - name: orders 
+        loaded_at_field: created_at
+        description: >
+          Contains demographic information about orders
+      - name: order_items
+        loaded_at_field: created_at
+        description: >
+          Contains demographic information about orders_items
+      - name: addresses
+        loaded_at_field: created_at
+        description: >
+          Contains demographic information about addresses
