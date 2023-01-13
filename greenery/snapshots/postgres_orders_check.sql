@@ -1,4 +1,4 @@
-{% snapshot orders_snapshot %}
+{% snapshot stg_postgres_orders_snapshot %}
 
   {{
     config(
@@ -12,3 +12,5 @@
   SELECT * FROM {{ source('postgres', 'orders') }}
 
 {% endsnapshot %}
+
+# This snapshot will generate a new table in the schema selected above with the snapshot name (eg. stg_postgres_orders_snapshot)

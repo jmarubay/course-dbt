@@ -4,5 +4,4 @@
   )
 }}
 
-select * from {{ ref('orders_snapshot') }}
-
+select * from {{ ref('stg_postgres_orders_snapshot') }}
