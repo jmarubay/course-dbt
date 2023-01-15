@@ -1,7 +1,8 @@
-{% snapshot stg_postgres_orders_snapshot %}
+{% snapshot snapshot_postgres__orders %}
 
   {{
     config(
+      target_database='DEV_DB',
       target_schema='DBT_JMARUBAYGREENPEACEORG',
       strategy='check',
       unique_key='order_id',

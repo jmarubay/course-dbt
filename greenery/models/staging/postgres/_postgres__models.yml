@@ -1,5 +1,17 @@
 version: 2
 
 models:
-  - name: stg_postgres
-    description: Test
+  - name: stg_postgres__addresses
+    description: Address information for each order
+  - name: stg_postgres__users
+    description: User information
+  - name: stg_postgres__promos
+    description: Promo code information
+  - name: stg_postgres__products
+    description: Products and inventory information
+  - name: stg_postgres__orders
+    description: Order information
+  - name: stg_postgres__order_items
+    description: Order items information including product and quantity
+  - name: stg_postgres__events
+    description: Event information

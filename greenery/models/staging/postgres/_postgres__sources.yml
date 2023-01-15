@@ -23,3 +23,19 @@ sources:
         loaded_at_field: created_at
         description: >
           Contains demographic information about addresses
+      - name: events
+        loaded_at_field: created_at
+        description: >
+          Contains demographic information about events
+      - name: users
+        loaded_at_field: created_at
+        description: >
+          Contains demographic information about users
+      - name: products
+        loaded_at_field: created_at
+        description: >
+          Contains demographic information about products
+      - name: promos
+        loaded_at_field: created_at
+        description: >
+          Contains demographic information about promos
