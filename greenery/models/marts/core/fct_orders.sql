@@ -2,7 +2,7 @@ SELECT
     o.order_guid,
     o.user_guid,
     o.promo_desc,
-    o.address_guid AS order_address, 
+    o.address_guid, 
     o.created_at_utc AS order_created_at,
     o.estimated_delivery_at_utc AS order_estimated_delivery_at,
     o.delivered_at_utc AS order_delivered_at,
