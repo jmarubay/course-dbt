@@ -1,9 +1,3 @@
-{{
-  config(
-    materialized='table'
-  )
-}}
-
 SELECT
     u.user_guid,
     u.email,
