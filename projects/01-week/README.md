@@ -4,7 +4,7 @@
 ## Questions
 
 ### 1. How many users do we have?
-```
+```sql
 SELECT
     COUNT(DISTINCT user_guid) AS count_users
 FROM
@@ -14,7 +14,7 @@ FROM
 
 ### 2. On average, how many orders do we receive per hour?
 
-```
+```sql
 WITH orders_per_hour
 AS (
 SELECT
@@ -33,7 +33,7 @@ FROM orders_per_hour
 **Answer:** We have 7.520833 orders per hour
 
 ### 3. On average, how long does an order take from being placed to being delivered?
-```
+```sql
 SELECT
    AVG(TIMESTAMPDIFF(hour, created_at_utc, delivery_at_utc)) AS hour_difference
 FROM stg_postgres__orders
@@ -47,7 +47,7 @@ WHERE
 ### 4. How many users have only made one purchase? Two purchases? Three+ purchases?
 Note: you should consider a purchase to be a single order. In other words, if a user places one order for 3 products, they are considered to have made 1 purchase.
 
-```
+```sql
 WITH orders_per_user AS(
 SELECT 
     user_guid,
@@ -73,7 +73,7 @@ GROUP BY order_count_category
 * 3 or more: 71
 
 ### 5. On average, how many unique sessions do we have per hour?
-```
+```sql
 WITH sessions_per_hour 
 AS (
   SELECT
