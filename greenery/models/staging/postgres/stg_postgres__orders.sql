@@ -10,6 +10,6 @@ SELECT
      tracking_id AS tracking_guid,
      shipping_service,
      estimated_delivery_at::timestampntz AS estimated_delivery_at_utc,
-     delivered_at::timestampntz AS delivery_at_utc,
+     delivered_at::timestampntz AS delivered_at_utc,
      status
  FROM {{ source('postgres', 'orders') }}
