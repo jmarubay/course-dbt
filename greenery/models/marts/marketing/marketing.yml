@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: int_users_orders
+    description: A model to join relevant user dimensions and orders events
