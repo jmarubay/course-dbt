@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: Contains information from users and addresses sources 
