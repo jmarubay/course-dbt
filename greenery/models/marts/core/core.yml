@@ -3,3 +3,9 @@ version: 2
 models:
   - name: dim_users
     description: Contains information from users and addresses sources 
+    
+  - name: dim_products
+    description: Contains information from products 
+
+  - name: fct_orders
+    description: Contains information from orders and order_items 
