@@ -1,9 +1,3 @@
-{{
-  config(
-    materialized='table'
-  )
-}}
-
 SELECT
      event_id AS event_guid,
      session_id AS session_guid,

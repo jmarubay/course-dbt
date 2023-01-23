@@ -1,9 +1,3 @@
-{{
-  config(
-    materialized='table'
-  )
-}}
-
 SELECT
      order_id AS order_guid,
      user_id AS user_guid,
