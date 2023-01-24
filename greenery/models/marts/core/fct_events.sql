@@ -4,6 +4,7 @@ SELECT
     user_guid,
     page_url,
     created_at_utc AS event_created_at,
+    event_type,
     order_guid,
     product_guid
 
