@@ -1,13 +1,19 @@
 version: 2
 
 models:
-  - name: int_page_views
-    description: A model to show total pageviews by product
+  - name: int_product_events_agg
+    description: A model to aggregated count of events for each product
 
   - name: int_purchases
     description: A model to show total purchases by product
 
   - name: int_session_events_agg
     description: A model to show the aggregated number of events by user_guid and session_guid
+
+  - name: fct_product_events
+    description: A model to aggregated show product details and count of events
+
+  - name: fct_user_sessions
+    description: A model to show user information and aggregated sessions
 
 

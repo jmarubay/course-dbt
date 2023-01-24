@@ -2,7 +2,7 @@ WITH sessions AS (
     SELECT * FROM {{ ref('int_session_events_agg') }}
 )
 , users AS(
-SELECT * FROM {{ ref('dim_users') }}
+SELECT * FROM {{ ref('int_users') }}
 )
 
 SELECT

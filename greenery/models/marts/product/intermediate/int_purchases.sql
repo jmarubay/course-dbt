@@ -1,5 +1,5 @@
 WITH events AS (
-    SELECT * FROM {{ ref('fct_events') }}
+    SELECT * FROM {{ ref('stg_postgres__events') }}
 ),
 
 order_items AS (

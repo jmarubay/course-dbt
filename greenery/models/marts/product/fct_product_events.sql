@@ -2,7 +2,7 @@ WITH events AS (
     SELECT * FROM {{ ref('int_product_events_agg') }}
 )
 , products AS(
-SELECT * FROM {{ ref('dim_products') }}
+SELECT * FROM {{ ref('int_products') }}
 )
 
 SELECT

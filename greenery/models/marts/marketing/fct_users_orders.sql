@@ -10,6 +10,6 @@ SELECT
     o.order_cost, 
     o.order_status
 
-FROM {{ ref('dim_users') }} AS u
-JOIN {{ ref('fct_orders') }} AS o
+FROM {{ ref('int_users') }} AS u
+JOIN {{ ref('int_orders') }} AS o
 USING(user_guid)

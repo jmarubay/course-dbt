@@ -1,5 +1,5 @@
 WITH events AS (
-    SELECT * FROM {{ ref('fct_events') }}
+    SELECT * FROM {{ ref('stg_postgres__events') }}
 )
 
 , final AS (
@@ -9,7 +9,7 @@ SELECT
     SUM(CASE WHEN event_type = 'page_view' then 1 else 0 end) AS product_page_views,
     SUM(CASE WHEN event_type = 'add_to_cart' then 1 else 0 end) AS product_add_to_carts
     
-FROM {{ ref('fct_events') }}
+FROM {{ ref('stg_postgres__events') }}
 GROUP BY 1
 HAVING product_guid IS NOT NULL
 )
