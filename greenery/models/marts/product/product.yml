@@ -6,12 +6,36 @@ models:
 
   - name: int_purchases
     description: A model to show total purchases by product
+    columns:
+      - name: product_guid
+        description: ""
+
+      - name: total_purchases
+        description: ""
 
   - name: int_session_events_agg
     description: A model to show the aggregated number of events by user_guid and session_guid
 
   - name: int_session_events_macro_agg
-    description: A model using the macro dbt_utils.get_column_values to show the aggregated number of events by unique user and session 
+    description: A model using the macro dbt_utils.get_column_values to show the aggregated number of events by unique user and session
+    columns:
+      - name: user_guid
+        description: ""
+
+      - name: session_guid
+        description: ""
+
+      - name: add_to_carts
+        description: ""
+
+      - name: checkouts
+        description: ""
+
+      - name: package_shippeds
+        description: ""
+
+      - name: page_views
+        description: ""
 
   - name: fct_product_events
     description: A model to aggregated show product details and count of events
