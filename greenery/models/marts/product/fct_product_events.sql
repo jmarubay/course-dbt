@@ -1,5 +1,5 @@
 WITH events AS (
-    SELECT * FROM {{ ref('int_product_events_agg') }}
+    SELECT * FROM {{ ref('int_product_events_macro_agg') }}
 )
 , products AS(
 SELECT * FROM {{ ref('int_products') }}
