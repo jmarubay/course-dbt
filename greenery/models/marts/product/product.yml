@@ -10,6 +10,9 @@ models:
   - name: int_session_events_agg
     description: A model to show the aggregated number of events by user_guid and session_guid
 
+  - name: int_session_events_macro_agg
+    description: A model using the macro dbt_utils.get_column_values to show the aggregated number of events by unique user and session 
+
   - name: fct_product_events
     description: A model to aggregated show product details and count of events
 
