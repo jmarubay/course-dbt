@@ -27,6 +27,8 @@ We’re getting really excited about dbt macros after learning more about them a
 
 Create a macro to simplify part of a model(s). Think about what would improve the usability or modularity of your code by applying a macro. Large case statements, or blocks of SQL that are often repeated make great candidates. Document the macro(s) using a .yml file in the macros directory.
 
+**Answer:** I used a macro from dbt_utils (get_column_values) to aggregate event types per session on the models fct_product_events_agg and int_session_events_macro_agg. I also wanted to create a new macro macro_event_types to store this use-case of the dbt_utils package, but I'm not yet sure how to do it and reference it on the models. 
+
 Note: One potential macro in our data set is aggregating event types per session. Start here as your first macro and add other macros if you want to go further.
 
 # Part 3: Hook
