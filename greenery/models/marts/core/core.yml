@@ -12,3 +12,7 @@ models:
 
   - name: int_events
     description: Contains information from events table
+
+  - name: fct_orders_products
+    description: Contains information from int_orders and product details from int_products
+
