@@ -49,5 +49,8 @@ models:
   - name: fct_product_conversion_rate 
     description: A model to show conversion rate by product_guid
 
+  - name: fct_session_events_conversion_rate
+    description: A model to calculate overall conversion rate (conversion rate is defined as the number of unique sessions with a purchase event / total number of unique sessions)
+
 
     
