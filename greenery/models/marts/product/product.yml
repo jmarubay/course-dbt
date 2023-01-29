@@ -45,3 +45,9 @@ models:
 
   - name: fct_user_sessions
     description: A model to show user information and aggregated sessions
+
+  - name: fct_product_conversion_rate 
+    description: A model to show conversion rate by product_guid
+
+
+    
