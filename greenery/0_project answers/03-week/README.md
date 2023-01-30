@@ -35,6 +35,7 @@ Note: One potential macro in our data set is aggregating event types per session
 We’re starting to think about granting permissions to our dbt models in our snowflake database so that other roles can have access to them.
 
 ## Add a post hook to your project to apply grants to the role “reporting”. 
+**Answer:** I added a post-hook to all models under /marts/. Defined on the dbt_project.yml file. 
 
 You can use the grant macro example from this week!
 
@@ -53,4 +54,14 @@ Show (using dbt docs and the model DAGs) how you have simplified or improved a D
 
 Let's update our orders snapshot again to see how our data is changing: run the orders snapshot model using dbt snapshot and query it in snowflake to see how the data has changed since last week. 
 
+```sql
+SELECT * FROM snapshot_postgres__orders
+WHERE dbt_valid_to IS NOT NUll
+```
+
 ## Which orders changed from week 2 to week 3? 
+
+**Answer:** The order_ids that have changed status from preparing to shipped are: 
+* 29d20dcd-d0c4-4bca-a52d-fc9363b5d7c6
+* c0873253-7827-4831-aa92-19c38372e58d
+* e2729b7d-e313-4a6f-9444-f7f65ae8db9a

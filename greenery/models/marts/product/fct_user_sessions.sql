@@ -1,5 +1,5 @@
 WITH sessions AS (
-    SELECT * FROM {{ ref('int_session_events_agg') }}
+    SELECT * FROM {{ ref('int_session_events_macro_agg') }}
 )
 , users AS(
 SELECT * FROM {{ ref('int_users') }}
@@ -11,10 +11,10 @@ SELECT
     users.first_name,
     users.last_name, 
     users.email,
-    sessions.page_view,
-    sessions.add_to_cart,
-    sessions.checkout,
-    sessions.packages_shipped,
+    sessions.page_views,
+    sessions.add_to_carts,
+    sessions.checkouts,
+    sessions.package_shippeds,
     sessions.first_session_event_at_utc AS first_session_event,
     sessions.last_session_event_at_utc AS last_session_event,
     DATEDIFF('minute', first_session_event, last_session_event) AS session_length_minutes
