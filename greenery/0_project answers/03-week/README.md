@@ -27,9 +27,9 @@ We’re getting really excited about dbt macros after learning more about them a
 
 Create a macro to simplify part of a model(s). Think about what would improve the usability or modularity of your code by applying a macro. Large case statements, or blocks of SQL that are often repeated make great candidates. Document the macro(s) using a .yml file in the macros directory.
 
-**Answer:** I used a macro from dbt_utils (get_column_values) to aggregate event types per session on the models fct_product_events_agg and int_session_events_macro_agg. I also wanted to create a new macro macro_event_types to store this use-case of the dbt_utils package, but I'm not yet sure how to do it and reference it on the models. 
-
 Note: One potential macro in our data set is aggregating event types per session. Start here as your first macro and add other macros if you want to go further.
+
+**Answer:** I used a macro from dbt_utils (get_column_values) to aggregate event types per session on the models fct_product_events_agg and int_session_events_macro_agg. I also wanted to create a new macro macro_event_types to store this use-case of the dbt_utils package, but I'm not yet sure how to do it and reference it on the models. 
 
 # Part 3: Hook
 We’re starting to think about granting permissions to our dbt models in our snowflake database so that other roles can have access to them.
@@ -46,11 +46,15 @@ After learning about dbt packages, we want to try one out and apply some macros 
 
 ## Install a package (i.e. dbt-utils, dbt-expectations) and apply one or more of the macros to your project
 
-PART 5: After improving our project with all the things that we have learned about dbt, we want to show off our work!
+**Answer:** I have installed dbt-utils and codegen. I have used the dbt_utils.get_column_values a few times on my models and used codegen.generate_model_yaml to automatically generate the yaml structure for a few models. 
 
+
+# PART 5: After improving our project with all the things that we have learned about dbt, we want to show off our work!
 Show (using dbt docs and the model DAGs) how you have simplified or improved a DAG using macros and/or dbt packages.
 
-# Part 5. dbt Snapshots
+**Answer:** My DAG was cleaner last week. I created new models for the Week 3 project and I feel they still need some refactoring to improve my DAG.  
+
+# Part 6. dbt Snapshots
 
 Let's update our orders snapshot again to see how our data is changing: run the orders snapshot model using dbt snapshot and query it in snowflake to see how the data has changed since last week. 
 
