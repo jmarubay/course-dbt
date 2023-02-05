@@ -17,18 +17,43 @@ WHERE dbt_valid_to IS NOT NUll
 # Part 2. Modeling challenge
 
 ## ➤ How are our users moving through the product funnel?
-**Answer:** 
+**Answer:** See the funnel below. I have created a model in the /analyises/ folder called 'fct_product_funnel' to answer this question.
 
-```sql
-
-```
+| TOTAL_SESSIONS      | ADD_TO_CART_RATE | CONVERSION_RATE |
+|---------------------|------------------|-----------------|
+| 578                 | 80.79            | 62.45           |
 
 ## ➤ Which steps in the funnel have largest drop off points?
-**Answer:** 
+**Answer:** The checkout step has the largest dropf-off rate.
+
+| TOTAL_SESSIONS      | ADD_TO_CART_DROP_OFF | CHECKOUT_DROP_OFF   |
+|---------------------|----------------------|---------------------|
+| 578                 | 19.20                | 22.69               |
 
 ```sql
 
 ```
+
+```sql
+WITH final AS(
+    
+    SELECT
+    COUNT(DISTINCT session_guid) AS total_sessions
+    , count(distinct (case when add_to_cart = 1 then session_guid end)) as sessions_with_add_to_cart
+    , count(distinct (case when checkout = 1 then session_guid end)) as sessions_with_checkout
+    , (sessions_with_add_to_cart/total_sessions)*100 AS add_to_cart_rate
+    , (sessions_with_checkout/total_sessions)*100 AS conversion_rate
+    , ((sessions_with_add_to_cart-sessions_with_checkout)/sessions_with_add_to_cart)*100 AS checkout_drop_off
+    , ((total_sessions-sessions_with_add_to_cart)/total_sessions)*100 AS add_to_cart_drop_off
+    
+    FROM dev_db.dbt_jmarubaygreenpeaceorg.int_session_events
+)
+
+SELECT * FROM final
+
+```
+
+
 
 ## ➤ Exposures
 In addition to answering these questions right now, we want to be able to answer them at any time. The Product and Engineering teams will want to track how they are improving these metrics on an ongoing basis. As such, we need to think about how we can model the data in a way that allows us to set up reporting for the long-term tracking of our goals.
