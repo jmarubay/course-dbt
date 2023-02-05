@@ -4,10 +4,14 @@
 Let's update our orders snapshot one last time to see how our data is changing: Run the orders snapshot model using dbt snapshot and query it in snowflake to see how the data has changed since last week.
 
 ## ➤ Which orders changed from week 3 to week 4?
-**Answer:** 
+**Answer:** The order_ids that have changed status from preparing to shipped are: 
+* 0e9b8ee9-ad0a-42f4-a778-e1dd3e6f6c51
+* 841074bf-571a-43a6-963c-ba7cbdb26c85
+* df91aa85-bfc7-4c31-93ef-4cee8d00a343
 
 ```sql
-
+SELECT * FROM snapshot_postgres__orders
+WHERE dbt_valid_to IS NOT NUll
 ```
 
 # Part 2. Modeling challenge
