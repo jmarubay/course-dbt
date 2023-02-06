@@ -50,6 +50,9 @@ SELECT * FROM final
 
 ```
 
+Here's a picture of my DAG:
+https://github.com/jmarubay/course-dbt/blob/main/project answers/04-week/julia-dag-feb5.png
+
 # Part 2B. Exposures
 In addition to answering these questions right now, we want to be able to answer them at any time. The Product and Engineering teams will want to track how they are improving these metrics on an ongoing basis. As such, we need to think about how we can model the data in a way that allows us to set up reporting for the long-term tracking of our goals.
 

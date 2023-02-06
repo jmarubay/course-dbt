@@ -1,5 +1,7 @@
 WITH o AS (
-    SELECT * FROM {{ ref('fct_orders_products') }}
+    SELECT * FROM {{ ref('int_orders') }} AS o
+    JOIN {{ ref('int_products') }} AS p
+    USING(product_guid)
 )
 
 , e AS (
@@ -29,8 +31,8 @@ WITH o AS (
     o.order_status, 
     o.quantity    
     
-    FROM o
-    JOIN e
+    FROM e
+    LEFT JOIN o
     USING(order_guid)
     ) 
     
