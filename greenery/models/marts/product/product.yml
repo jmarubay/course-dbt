@@ -13,9 +13,6 @@ models:
       - name: total_purchases
         description: ""
 
-  - name: int_session_events_agg
-    description: A model to show the aggregated number of events by user_guid and session_guid
-
   - name: int_session_events_macro_agg
     description: A model using the macro dbt_utils.get_column_values to show the aggregated number of events by unique user and session
     columns:
@@ -45,3 +42,6 @@ models:
 
   - name: fct_user_sessions
     description: A model to show user information and aggregated sessions
+
+  - name: fct_session_events
+    description: A model to show session event data

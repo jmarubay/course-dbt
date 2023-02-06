@@ -28,7 +28,6 @@ WITH o AS (
     o.tracking_guid,
     o.shipping_service,
     o.order_status, 
-    
     o.quantity    
     
     FROM o

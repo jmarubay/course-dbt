@@ -21,4 +21,4 @@ exposures:
       name: Julia Marubayashi
       email: jmarubay@greenery.com
     depends_on:
-      - ref('int_session_events')
+      - ref('fct_session_events')

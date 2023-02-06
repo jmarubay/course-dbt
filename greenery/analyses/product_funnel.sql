@@ -7,7 +7,7 @@ WITH final AS(
     , (sessions_with_add_to_cart/total_sessions)*100 AS add_to_cart_rate
     , (sessions_with_checkout/total_sessions)*100 AS conversion_rate
     
-    FROM {{ref ('int_session_events') }}
+    FROM {{ref ('fct_session_events') }}
 )
 
 SELECT * FROM final
