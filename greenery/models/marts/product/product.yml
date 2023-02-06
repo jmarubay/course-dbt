@@ -1,6 +1,9 @@
 version: 2
 
 models:
+  - name: int_product_events
+    description: A model to join all product events
+    
   - name: int_product_events_macro_agg
     description: A model to aggregated count of events for each product
 
@@ -33,9 +36,6 @@ models:
 
       - name: page_views
         description: ""
-
-  - name: int_product_events_checkout
-    description: Contains product and order details for 'checkout' events
   
   - name: fct_product_events_agg
     description: A model to aggregated show product details and count of events

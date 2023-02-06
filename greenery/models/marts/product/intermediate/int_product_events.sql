@@ -1,10 +1,9 @@
 WITH o AS (
-    SELECT * FROM {{ ref('fct_orders_products') }}
+    SELECT * FROM fct_orders_products
 )
 
 , e AS (
-    SELECT * FROM {{ ref('int_events') }}
-    WHERE event_type = ('checkout') 
+    SELECT * FROM int_events
 )
 
 , final AS (

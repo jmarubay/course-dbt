@@ -6,8 +6,13 @@
     ) 
 %}
 
+WITH product_events_checkout AS (
+    SELECT * FROM {{ ref('int_product_events') }}
+    WHERE event_type = ('checkout') 
+)
 
-WITH final AS(   
+
+, final AS(   
     SELECT
     p.product_guid
     , p.product_name
@@ -16,7 +21,7 @@ WITH final AS(
     {% endfor %}
     
 FROM {{ ref('int_events') }} AS e 
-LEFT JOIN {{ ref('int_product_events_checkout') }} AS p
+LEFT JOIN product_events_checkout AS p
 USING(session_guid)
 GROUP BY 1,2
 )
