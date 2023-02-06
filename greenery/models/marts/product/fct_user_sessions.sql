@@ -1,5 +1,22 @@
+{% 
+    set event_types = dbt_utils.get_column_values(
+        table = ref('int_events')
+        , column = 'event_type'
+        , order_by = 'event_type asc'
+    ) 
+%}
+
 WITH sessions AS (
-    SELECT * FROM {{ ref('int_session_events_macro_agg') }}
+    SELECT
+    user_guid
+    , session_guid
+    {% for event_type in event_types %}
+    , sum(case when event_type = '{{ event_type }}' then 1 else 0 end) as {{ event_type }}s
+    {% endfor %}
+    , MIN(event_created_at) AS first_session_event_at_utc
+    , MAX(event_created_at) AS last_session_event_at_utc 
+    FROM {{ref ('int_events') }}
+    GROUP BY 1, 2
 )
 , users AS(
 SELECT * FROM {{ ref('int_users') }}
