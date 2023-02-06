@@ -1,7 +1,7 @@
 version: 2
 
 exposures:  
-  - name: conversion_rate_product
+  - name: conversion_rate_by_product
     description: >
       Model that is critical to give the conversion rate by product 
     type: analysis
@@ -12,9 +12,9 @@ exposures:
     depends_on:
       - ref('fct_product_events_agg')
 
-  - name: conversion_rate_overall
+  - name: product_funnel
     description: >
-      Model that is critical to give the overall conversion rate of Greenery
+      Model that is critical to give the product funnel including the conversion rate and drop off rate of each steps
     type: analysis
     maturity: medium
     owner:
