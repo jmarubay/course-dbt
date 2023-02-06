@@ -1,7 +1,7 @@
 version: 2
 
 exposures:  
-  - name: conversion_rate_by_product
+  - name: product_conversion_rate
     description: >
       Model that is critical to give the conversion rate by product 
     type: analysis

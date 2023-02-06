@@ -1,9 +1,9 @@
 WITH o AS (
-    SELECT * FROM fct_orders_products
+    SELECT * FROM {{ ref('fct_orders_products') }}
 )
 
 , e AS (
-    SELECT * FROM int_events
+    SELECT * FROM {{ ref('int_events') }}
 )
 
 , final AS (

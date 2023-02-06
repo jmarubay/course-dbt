@@ -3,9 +3,6 @@ version: 2
 models:
   - name: int_product_events
     description: A model to join all product events
-    
-  - name: int_product_events_macro_agg
-    description: A model to aggregated count of events for each product
 
   - name: int_purchases
     description: A model to show total purchases by product
